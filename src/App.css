@@ -1,12 +1,17 @@
 .App {
-  text-align: center;
-  height: 100%;
-  width: 600px;
-  padding: 50px 20px;
-  background: #00000017;
-  margin: auto;
-  position: relative;
+  background: black;
+  color: white;
+  background: url('assets/pattern.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center !important;
   overflow: hidden;
+  position: fixed;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  padding: 50px 20px;
+  box-sizing: border-box;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
@@ -19,4 +24,8 @@
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #fff;
   opacity: 0.8;
+}
+
+@media only screen and (max-width: 600px) {
+
 }

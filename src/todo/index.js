@@ -23,8 +23,6 @@ export function TasksContainer() {
     dispatch(fetchTasks())
   }, [])
 
-  console.log(`zzzstate`, loading, tasks)
-
   return (
     <>
       <div className={styles.markAll} onClick={()=>dispatch(mark_done())}>Mark All as Done</div>

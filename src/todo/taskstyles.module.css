@@ -26,9 +26,8 @@
     color: white;
 }
 .taskinput {
-    /* width: 500px; */
+    width: 500px;
     margin: auto;
-    width: 80%;
     /* margin: 0 20px; */
     box-sizing: border-box;
     outline: none;
@@ -38,7 +37,6 @@
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
-    margin-left: 40px;
     margin-bottom: 25px;
 }
 .task.id {
@@ -77,7 +75,18 @@
     cursor: pointer;
     opacity: 0;
     transition: all 0.2s;
+    right: 10px;
+    position: absolute;
 }
 .task:hover .delete {
     opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .taskinput {
+        width: 100%;
+    }
+    .tasksContainer {
+        width: 100%;
+    }
 }
