@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { get_tasks } from './api';
+import { get_tasks, update_task } from './api';
 
 const initialState = {
   value: 0,
@@ -39,6 +39,7 @@ export const taskSlice = createSlice({
             item.title = task.title
           if(typeof(task.status)!=='undefined')
             item.status = task.status
+          //can call update api on remote server too
         }
       }
     },
