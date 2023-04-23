@@ -22,26 +22,36 @@ export const taskSlice = createSlice({
   initialState,
   reducers: {
     setTasks: (state, action) => {
-      console.log(`zzz setting tasks`, action.payload)
       state.tasks = action.payload
     },
     add_task: (state, action) => {
-      console.log(`zzzaddingtask`, action)
       //getting max of ids + 1, so if rearranging is enabled, it still works
       const id = state.tasks.length===0 ? 0 : Math.max(...state.tasks.map(i=>i.id)) + 1
       //can make async calls here to update remote state, only then push to local state
       state.tasks.unshift({...action.payload, id})
     },
     edit_task: (state, action) => {
-      console.log(`zzzediting`, state.tasks, action)
       const { tasks } = state
       const { payload: task } = action
       for(let item of tasks) {
         if(task.id===item.id) {
-          item.title = task.title
+          if(task.title)
+            item.title = task.title
+          if(task.status)
+            item.status = task.status
         }
       }
-      state.tasks = tasks
+    },
+    delete_task: (state, action) => {
+      const { tasks } = state
+      state.tasks = tasks.filter(i => i.id!==action.payload.id)
+    },
+    mark_done: (state, action) => {
+      const { tasks } = state
+
+      for(let item of tasks) {
+        item.status = 'done'
+      }
     }
   },
 
@@ -59,6 +69,6 @@ export const taskSlice = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount, setTasks, add_task, edit_task } = taskSlice.actions
+export const { increment, decrement, incrementByAmount, setTasks, add_task, edit_task, mark_done, delete_task } = taskSlice.actions
 
 export default taskSlice.reducer;

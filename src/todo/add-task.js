@@ -15,7 +15,7 @@ export default function AddTask(props) {
 
     return (
         <div className={`${taskstyles.task} ${taskstyles.taskinput}`}>
-            <div className={taskstyles.marker}>oo</div>
+            {/* <div className={taskstyles.marker}>o</div> */}
             <form onSubmit={handleSubmit} >
                 <input
                     className={`${taskstyles.task} ${taskstyles.taskinput}`}
