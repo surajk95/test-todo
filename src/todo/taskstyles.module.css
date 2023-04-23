@@ -1,0 +1,20 @@
+.tasksContainer {
+    max-height: 300px;
+    overflow-y: scroll;
+    width: 500px;
+    margin: auto;
+}
+.task {
+    display: flex;
+    width: 100%;
+}
+.taskinput {
+    width: 500px;
+    margin: auto;
+}
+.task.id {
+
+}
+.title {
+    width: 500px;
+}
