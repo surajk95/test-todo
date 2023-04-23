@@ -27,7 +27,7 @@ export function TasksContainer() {
 
   return (
     <>
-      <div className={styles.markAll} onClick={()=>dispatch(mark_done())}>Toggle All as Done</div>
+      <div className={styles.markAll} onClick={()=>dispatch(mark_done())}>Mark All as Done</div>
       <AddTask addTask={payload => dispatch(add_task(payload))} />
       <Tasks
         loading={loading}

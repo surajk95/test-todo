@@ -14,16 +14,13 @@ export default function AddTask(props) {
     }
 
     return (
-        <div className={`${taskstyles.task} ${taskstyles.taskinput}`}>
-            {/* <div className={taskstyles.marker}>o</div> */}
-            <form onSubmit={handleSubmit} >
-                <input
-                    className={`${taskstyles.task} ${taskstyles.taskinput}`}
-                    placeholder="Add task"
-                    value={task}
-                    onChange={e => {setTask(e.target.value)}}
-                />
-            </form>
-        </div>
+        <form onSubmit={handleSubmit} >
+            <input
+                className={`${taskstyles.task} ${taskstyles.taskinput}`}
+                placeholder="Add task"
+                value={task}
+                onChange={e => {setTask(e.target.value)}}
+            />
+        </form>
     )
 }

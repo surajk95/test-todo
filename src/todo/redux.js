@@ -35,9 +35,9 @@ export const taskSlice = createSlice({
       const { payload: task } = action
       for(let item of tasks) {
         if(task.id===item.id) {
-          if(task.title)
+          if(typeof(task.title)!=='undefined')
             item.title = task.title
-          if(task.status)
+          if(typeof(task.status)!=='undefined')
             item.status = task.status
         }
       }

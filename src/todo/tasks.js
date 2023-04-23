@@ -43,17 +43,20 @@ const TaskSection = (props) => {
                     <div key={task.id} className={styles.task}>
                         <div
                             className={styles.marker}
-                            onClick={()=>handleEdit({id: task.id, status: !task.status ? 'done' : 'active'})}
+                            onClick={()=>handleEdit({id: task.id, status: task.status!=='done' ? 'done' : 'active'})}
+                            title="Toggle status"
                         >
-                            o
+                            <svg height="12" width="12">
+                                <circle cx="6" cy="6" r="5" stroke-width="2"/>
+                            </svg>
                         </div>
                         <input
-                            className={styles.title}
+                            className={`${styles.title} ${task.status==='done' ? styles.completed : styles.active}`}
                             value={task.title}
                             placeholder="What do you want to do?"
                             onChange={e => handleEdit({id: task.id, title: e.target.value})}
                         />
-                        <div className={styles.delete} onClick={()=>deleteTask({id: task.id})}>X</div>
+                        <div className={styles.delete} onClick={()=>deleteTask({id: task.id})} title="Delete">x</div>
                     </div>
                 )}
             )

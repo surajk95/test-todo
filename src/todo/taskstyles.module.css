@@ -1,20 +1,83 @@
 .tasksContainer {
-    max-height: 300px;
+    height: calc(100vh - 200px);
     overflow-y: scroll;
     width: 500px;
     margin: auto;
 }
+.section {
+    margin: 25px 0;
+}
 .task {
-    display: flex;
+    position: relative;
+    transition: height 0.4s, padding 0.4s;
+    overflow: hidden;
+    padding: 5px 50px 5px 10px;
+    border-radius: 5px;
     width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: all 0.15s;
+    font-size: 14px;
+}
+.task:hover {
+    background: rgb(0, 0, 0, 0.4);
+    color: white;
 }
 .taskinput {
-    width: 500px;
+    /* width: 500px; */
     margin: auto;
+    width: 80%;
+    /* margin: 0 20px; */
+    box-sizing: border-box;
+    outline: none;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 25px;
 }
 .task.id {
 
 }
 .title {
-    width: 500px;
+    width: 100%;
+    background: none;
+    color: inherit;
+    outline: none;
+    border: none;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+.completed {
+    text-decoration:line-through;
+}
+.title:hover {
+    text-decoration: none;
+}
+.marker {
+    width: 12px;
+    height: 12px;
+    stroke: #FFA5BC;
+    /* border-radius: 50%; */
+    border: none;
+    margin-right: 20px;
+    transition: all 0.4s;
+    cursor: pointer;
+    fill: transparent;
+}
+.task:hover .marker {
+    fill: #FFA5BC;
+}
+.delete {
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s;
+}
+.task:hover .delete {
+    opacity: 1;
 }

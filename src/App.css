@@ -1,3 +1,22 @@
 .App {
   text-align: center;
+  height: 100%;
+  width: 600px;
+  padding: 50px 20px;
+  background: #00000017;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 0.8;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+  opacity: 0.8;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #fff;
+  opacity: 0.8;
 }
